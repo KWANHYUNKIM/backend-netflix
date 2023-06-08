@@ -1,22 +1,17 @@
-const swaggerUi = require('swagger-ui-express');
-const swaggereJsdoc = require('swagger-jsdoc');
+const swaggerAutogen = require("swagger-autogen")();
 
-const options = {
-    swaggerDefinition: {
-        info: {
-            title: 'Test API',
-            version: '1.0.0',
-            description: 'Test API with express',
-        },
-        host: 'localhost:3300',
-        basePath: '/'
-    },
-    apis: ['./routes/*.js', './swagger/*']
+const doc = {
+  info: {
+    title: "My API",
+    description: "Description",
+  },
+  host: "localhost:3000",
+  schemes: ["http"],
 };
 
-const specs = swaggereJsdoc(options);
+const outputFile = "./swagger-output.json";
+const endpointsFiles = [
+  "./app.js"
+];
 
-module.exports = {
-    swaggerUi,
-    specs
-};
+swaggerAutogen(outputFile, endpointsFiles, doc);
