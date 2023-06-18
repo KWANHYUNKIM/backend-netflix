@@ -9,8 +9,10 @@ const logincontroll = {
         const password = req.params.password;
         connection.query(sql,[email,password],(error, rows) =>{
                 if(error) throw error;
-                    res.send(rows)
+                   res.send(rows);
             })
+
+            
     }
 }
 

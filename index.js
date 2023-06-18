@@ -20,7 +20,7 @@ app.listen(port,() => {
 // 1. 회원가입 
 app.use('/users',require('./routes/userRouter')); // 회원가입 
 app.use('/users/login',require('./routes/loginRouter')); // 로그인 
-app.use('/users',require('./routes/profileRouter')); // 프로필 생성  
+app.use('/users',require('./routes/profileRouter')); // 프로필 생성  ,/users/:userIdx?keyword=profile 사용하는 이유? 
 //app.use('/users/:userldx?keyword=pwd'); // 프로필 비밀번호 설정 (PATCH)
 //app.use('/users/:profileldx'); // 프로필 비밀번호 검증
 //app.use('/evaluations/:profileIdx'); // 콘텐츠 평가 및 취소
