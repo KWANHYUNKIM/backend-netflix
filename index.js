@@ -20,9 +20,8 @@ app.listen(port,() => {
 // 1. 회원가입 
 app.use('/users',require('./routes/userRouter')); // 회원가입 
 app.use('/users/login',require('./routes/loginRouter')); // 로그인 
-app.use('/profiles',require('./routes/profileRouter')); // 프로필 생성  ,/users/:userIdx?keyword=profile 사용하는 이유? 
-//app.use('/users/:userldx?keyword=pwd'); // 프로필 비밀번호 설정 (PATCH)
-//app.use('/users/:profileldx'); // 프로필 비밀번호 검증
+app.use('/users',require('./routes/profileRouter')); // 프로필 생성 AND 프로필 비밀번호 설정 (PATCH) : keyword 식별 
+app.use('/users',require('./routes/profileRouter')); // 프로필 비밀번호 검증
 //app.use('/evaluations/:profileIdx'); // 콘텐츠 평가 및 취소
 
 ///-- GET --/
@@ -38,6 +37,7 @@ app.use('/profiles',require('./routes/profileRouter')); // 프로필 생성  ,/u
 //app.use('/topMovies/:profileIdx'); //  Top 10 영화 조회 
 //app.use('/movies/:profileIdxx'); // 영화 상세 페이지 조회
 //app.use('/series/:profileIdx'); //  시리즈 상세 페이지 조회 
+
 ///-- PATCH --/
 //app.use('/users/pwd'); // 회원 비밀번호 변경 
 
