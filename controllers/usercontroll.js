@@ -5,7 +5,8 @@ const usercontroll = {
     insertUser : async (req,res) => {
         // javascript 구조분해할당 
         const {email,password, membershipidx ,card} = req.body;
-       
+        
+
         const card_sql = `INSERT INTO card(cardNumber,name,yymm,birthYear,birthMonth,birthDay,phone) VALUES ('${card.cardNumber}','${card.name}','${card.yymm}','${card.birthYear}','${card.birthMonth}','${card.birthDay}','${card.phone}')`
         connection.query(card_sql,[card] , (error, rows) =>{
             if(error) throw error;
@@ -22,6 +23,6 @@ const usercontroll = {
             
         });
         
-    }
+    } 
 }
 module.exports = usercontroll

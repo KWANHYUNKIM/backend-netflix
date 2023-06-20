@@ -12,5 +12,4 @@ router.route('/:userIdx/:name')
 router.route('/:profileldx')
 
     .patch(profilecontroll.postProfile);
-    
 module.exports = router;

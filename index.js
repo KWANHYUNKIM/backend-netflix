@@ -20,13 +20,12 @@ app.listen(port,() => {
 // 1. 회원가입 
 app.use('/users',require('./routes/userRouter')); // 회원가입 
 app.use('/users/login',require('./routes/loginRouter')); // 로그인 
-app.use('/users',require('./routes/profileRouter')); // 프로필 생성 AND 프로필 비밀번호 설정 (PATCH) : keyword 식별 
-app.use('/users',require('./routes/profileRouter')); // 프로필 비밀번호 검증
+app.use('/users',require('./routes/profileRouter')); // 프로필 생성 AND 프로필 비밀번호 설정 (PATCH) : keyword 식별 , 프로필 비밀번호 검증
 //app.use('/evaluations/:profileIdx'); // 콘텐츠 평가 및 취소
 
 ///-- GET --/
 //app.use('/profiles/:userldx'); // 회원 전체 프로필 조회
-//app.use('/llikes/:profileIdx'); // 내가 찜한 콘텐츠 조회 
+app.use('/likes/:profileIdx',require('./routes/likeRouter')); // 내가 찜한 콘텐츠 조회 
 //app.use('/searches'); // 최다 검색 조회
 //app.use('/categories/main'); // 메인 카테고리 조회
 //app.use('/categories/series'); //  시리즈 카테고리 조회
@@ -39,7 +38,7 @@ app.use('/users',require('./routes/profileRouter')); // 프로필 비밀번호 �
 //app.use('/series/:profileIdx'); //  시리즈 상세 페이지 조회 
 
 ///-- PATCH --/
-//app.use('/users/pwd'); // 회원 비밀번호 변경 
+app.use('/users/pwd'); // 회원 비밀번호 변경 
 
 ///-- PUT --/
 //app.use('/profiles/:profileIdx'); // 프로필 설정 변경
