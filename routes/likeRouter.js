@@ -1,7 +1,7 @@
 const logincontroll = require('../controllers/likescontroll');
 const router = require('express').Router();
 
-router.route('/')
+router.route('/:profileIdx')
     .get(logincontroll.getlikes)
    
 
